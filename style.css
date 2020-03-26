@@ -1,10 +1,18 @@
+.jumbotron {
+  text-align: center;
+  background-color: transparent;
+  color: black;
+  border-radius: 0;
+  border-bottom: 10px solid black;
+}
+
 body {
   /* image for background */
   background-image: url('./images/low_contrast_linen.png');
 
   /* font parameters */
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .8em;
 
   /* added padding to prevent navbar overlap. (100 based on browser inpector of size) */
   padding-top: 90px;
@@ -17,39 +25,10 @@ input {
   background: transparent;
   border: none;
 
-  /* so cursor appears */
+  /* cursor appears  */
   padding-left: 3px;
 }
 
-
-.navbar {
-  /* background-color: #73919b;   */
-  background-color: #73919b;  
-  color: #b6d7e2;  
-
-  /* pulls everything down to push up against bottom border */
-  padding-bottom: 0;
-  
-  /* creates solid line for the bottom border  */
-  border-bottom: solid;
-  border-bottom-color: #ccc;
-  width: 100%;
-  text-align: center;
-}
-
-#navbar-title {
-  padding: 0px;
-  font-size: 30px;
-  color: linen!important; /* TODO can we do this without the !important */
-  text-align: center;
-}
-
-#navbar-subtitle {
-  padding: 2px;
-  font-size: 15px;
-  color: linen!important; /* TODO can we do this without the !important */
-  text-align: center;
-}
 
 .col-md-1, .col-md-2, .col-md-9 {
   padding: 0;
@@ -107,21 +86,7 @@ input {
   text-align: center;
 }
 
-.footer {
-  /* set text properties */
-  background-color: #666;
-  
-  /* sets height of footer*/
-  height: 10%;
-  
-  /* sets properties for footer border*/
-  border-top: solid;
-  border-top-color: #b6d7e2;  
-  border-top-width: 8px;
-}
-
-.footer-text, .header-text {
-  /* forces text across the entire screen so it has a center */
+.header-text {
   width: 100%;
   text-align: center;
 

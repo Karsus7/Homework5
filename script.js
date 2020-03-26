@@ -1,30 +1,23 @@
 $(document).ready(function () {
 
-    // test flag
     const test = false;
 
-    // get times from moment
     const now = moment().format('MMMM Do YYYY');
 
-    // commented out for test in non-standard hours
     let nowHour24 = moment().format('H');
     let nowHour12 = moment().format('h');
 
-    // set times for tesitng after hours
     if (test) {
         nowHour24 = 13;
         nowHour12 = 1;
     }
 
-    let $dateHeading = $('#navbar-subtitle');
+    let $dateHeading = $('#jumbotron-subtitle');
     $dateHeading.text(now);
 
-    // using font awesome icon https://fontawesome.com/license
-    // change description here - none
+
     const saveIcon = "./images/save-regular.svg";
 
-    // Get stored todos from localStorage
-    // Parsing the JSON string to an object
     let storedPlans = JSON.parse(localStorage.getItem("storedPlans"));
 
     if (test) { console.log(storedPlans); }
@@ -60,7 +53,7 @@ $(document).ready(function () {
         $rowDiv.addClass('plannerRow');
         $rowDiv.attr('hour-index', hour);
 
-        // Start building Time box portion of row
+        // Start building Time boxs
         let $col2TimeDiv = $('<div>');
         $col2TimeDiv.addClass('col-md-2');
 
@@ -178,11 +171,10 @@ $(document).ready(function () {
         if (test) { console.log('onChange'); }
         if (test) { console.log('id', $(this).attr('hour-index')); }
 
-        // neeed to check for save button
 
         let i = $(this).attr('hour-index');
 
-        // add shawdow pulse class
+        // add visible effect when saving
         $(`#saveid-${i}`).addClass('shadowPulse');
     });
 });
