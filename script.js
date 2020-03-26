@@ -25,11 +25,6 @@ $(document).ready(function () {
     // If plans were retrieved from localStorage, update the plan array to it
     if (storedPlans !== null) {
         planTextArr = storedPlans;
-    } else {
-        // this should only occur on first time the app is loaded in the browser
-        // helpfully remind user that lunch is important
-        planTextArr = new Array(9);
-        planTextArr[4] = "Picnic lunch outside";
     }
 
     if (test) { console.log("full array of plned text", planTextArr); }
@@ -76,12 +71,12 @@ $(document).ready(function () {
         // populate timeBox with time
         $timeBoxSpn.text(`${displayHour} ${ampm}`);
 
-        // insert into col inset into timebox
+        // insert into column into timebox
         $rowDiv.append($col2TimeDiv);
         $col2TimeDiv.append($timeBoxSpn);
-        // STOP building Time box portion of row
+        // Stop building Time box portion of row
 
-        // START building input portion of row
+        // Start building input portion of row
         // build row components
         let $dailyPlanSpn = $('<input>');
 
@@ -93,16 +88,16 @@ $(document).ready(function () {
         // access index from data array for hour 
         $dailyPlanSpn.val(planTextArr[index]);
 
-        // create col to control width
+        // create column to control width
         let $col9IptDiv = $('<div>');
         $col9IptDiv.addClass('col-md-9');
 
-        // add col width and row component to row
+        // add column width and row component to row
         $rowDiv.append($col9IptDiv);
         $col9IptDiv.append($dailyPlanSpn);
-        // STOP building Time box portion of row
+        // Stop building Time box portion of row
 
-        // START building save portion of row
+        // Start building save portion of row
         let $col1SaveDiv = $('<div>');
         $col1SaveDiv.addClass('col-md-1');
 
@@ -111,10 +106,10 @@ $(document).ready(function () {
         $saveBtn.attr('save-id', index);
         $saveBtn.attr('class', "far fa-save saveIcon");
 
-        // add col width and row component to row
+        // add column width and row component to row
         $rowDiv.append($col1SaveDiv);
         $col1SaveDiv.append($saveBtn);
-        // STOP building save portion of row
+        // Stop building save portion of row
 
         // set row color based on time
         updateRowColor($rowDiv, hour);
@@ -129,7 +124,6 @@ $(document).ready(function () {
         if (test) { console.log("rowColor ", nowHour24, hour); }
 
         if (hour < nowHour24) {
-            // $hourRow.css('')
             if (test) { console.log("lessThan"); }
             $hourRow.css("background-color", "lightgrey")
         } else if (hour > nowHour24) {
@@ -141,8 +135,7 @@ $(document).ready(function () {
         }
     };
 
-    // saves to local storage
-    // conclick function to listen for user clicks on plan area
+    // saves to local storage (IMPORTANT)
     $(document).on('click', 'i', function (event) {
         event.preventDefault();
 
