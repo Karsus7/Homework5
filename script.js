@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+let planTextArr;
     const test = false;
 
     const now = moment().format('MMMM Do YYYY');
